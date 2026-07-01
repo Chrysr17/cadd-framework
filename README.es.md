@@ -2,27 +2,27 @@
 
 🌐 **Idiomas**
 
-- 🇪🇸 Español (Actual)
-- 🇺🇸 [English](README.md)
+* 🇺🇸 [English](README.md)
+* 🇪🇸 Español (Actual)
 
 > **Context-Adaptive Development**
 >
-> *Una metodología ligera para el desarrollo de software asistido por IA, basada en un único contexto del proyecto, agentes especializados por repositorio, colaboración escalable entre agentes y documentación operativa mínima.*
+> *Una metodología ligera de desarrollo asistido por IA basada en un único contexto de proyecto, agentes especializados, colaboración escalable entre agentes y documentación operativa mínima.*
 
 ---
 
 # ¿Qué es CADD?
 
-CADD es una metodología ligera para el desarrollo de software asistido por inteligencia artificial.
+CADD es una metodología ligera para el desarrollo asistido por IA.
 
-En lugar de depender de múltiples documentos de planificación y grandes especificaciones, CADD utiliza un **único contexto del proyecto** como fuente de verdad y agentes especializados por repositorio para transformar la planificación en implementación.
+En lugar de depender de múltiples documentos de planificación y especificaciones extensas, CADD utiliza un **único contexto de proyecto** como fuente de verdad y agentes especializados para transformar la planificación en implementación.
 
-Su objetivo es reducir la sobrecarga documental manteniendo:
+El objetivo es reducir la carga documental, manteniendo:
 
-- Consistencia
-- Mantenibilidad
-- Trazabilidad
-- Escalabilidad
+* Consistencia
+* Mantenibilidad
+* Trazabilidad
+* Escalabilidad
 
 ---
 
@@ -30,12 +30,12 @@ Su objetivo es reducir la sobrecarga documental manteniendo:
 
 Los flujos tradicionales de desarrollo asistido por IA suelen generar:
 
-- documentación duplicada;
-- múltiples documentos de planificación;
-- especificaciones excesivamente grandes;
-- documentación que rápidamente queda desactualizada.
+* documentación duplicada;
+* múltiples documentos de planificación;
+* especificaciones demasiado extensas;
+* documentación que se desactualiza rápidamente.
 
-CADD resuelve estos problemas manteniendo todo el contexto del proyecto en un único lugar y permitiendo que agentes especializados generen y mantengan únicamente la documentación que realmente aporta valor.
+CADD aborda estos problemas manteniendo el contexto del proyecto en un solo lugar y permitiendo que agentes especializados generen y mantengan únicamente la documentación que aporta valor.
 
 ---
 
@@ -43,74 +43,100 @@ CADD resuelve estos problemas manteniendo todo el contexto del proyecto en un ú
 
 CADD se basa en los siguientes principios.
 
-## Single Source of Truth
+## Fuente Única de Verdad
 
-`CONTEXT.md` es el único documento de planificación del proyecto.
+`CONTEXT.md` es el documento principal de planificación del proyecto.
 
 Todas las decisiones del proyecto parten de este documento.
 
 ---
 
-## Agentes Especializados por Repositorio
+## Agentes Especializados
 
-Cada repositorio cuenta con un agente especializado.
+Cada agente tiene una responsabilidad clara.
+
+Los agentes pueden organizarse por:
+
+* repositorio;
+* capa técnica;
+* área del sistema;
+* rol de desarrollo;
+* especialización de dominio.
 
 Ejemplos:
 
-- Backend
-- Frontend
-- IA
-- Mobile
-- DevOps
+* Backend Agent
+* Frontend Agent
+* Fullstack Agent
+* Control Systems Agent
+* AI Agent
+* Mobile Agent
+* DevOps Agent
 
-Cada agente se enfoca únicamente en las responsabilidades de su propio repositorio.
+Cada agente se enfoca únicamente en su alcance definido y evita asumir responsabilidades fuera de su rol.
+
+---
+
+## Agentes Orientados a Repositorio y Dominio
+
+CADD soporta tanto agentes orientados a repositorio como agentes orientados a dominio.
+
+Los agentes orientados a repositorio son útiles cuando un proyecto está dividido en bases de código separadas, como repositorios backend y frontend.
+
+Los agentes orientados a dominio son útiles cuando el trabajo requiere conocimiento especializado, como sistemas de control, inteligencia artificial, infraestructura, ciberseguridad, procesamiento de datos o sistemas embebidos.
+
+Esto permite que CADD pueda aplicarse tanto a proyectos tradicionales de software como a flujos de ingeniería más especializados.
 
 ---
 
 ## Escalabilidad de Agentes
 
-CADD soporta tanto desarrollo con un único agente como colaboración entre múltiples agentes.
+CADD soporta tanto desarrollo con un solo agente como desarrollo multiagente.
 
-Los proyectos pueden utilizar:
+Los proyectos pueden usar:
 
-- un único agente por repositorio;
-- múltiples agentes por repositorio;
-- agentes especializados colaborando sobre el mismo sistema.
+* un único agente de repositorio;
+* un agente fullstack;
+* múltiples agentes orientados a repositorio;
+* agentes especializados colaborando sobre el mismo sistema.
 
-La cantidad de agentes dependerá de:
+La cantidad de agentes debe determinarse según:
 
-- el tamaño del proyecto;
-- la complejidad del sistema;
-- el tamaño del equipo;
-- la experiencia de los desarrolladores.
+* tamaño del proyecto;
+* complejidad del sistema;
+* tamaño del equipo;
+* experiencia del desarrollador;
+* complejidad del dominio.
 
-CADD no requiere múltiples agentes.
+CADD no exige el uso de múltiples agentes.
 
-La misma metodología escala de forma natural desde un único desarrollador hasta equipos de ingeniería de gran tamaño sin modificar sus principios.
+La misma metodología escala naturalmente desde un solo desarrollador hasta equipos de ingeniería grandes sin cambiar sus principios base.
 
 ### Estrategia Recomendada
 
-| Tamaño del Proyecto | Estrategia Recomendada |
-|----------------------|------------------------|
-| Pequeño | Un único agente por repositorio |
-| Mediano | Agentes especializados por repositorio |
-| Grande | Colaboración entre múltiples agentes |
+| Tamaño / Contexto del Proyecto | Estrategia Recomendada                          |
+| ------------------------------ | ----------------------------------------------- |
+| Proyecto pequeño               | Un solo agente de repositorio o Fullstack Agent |
+| Proyecto mediano               | Agentes orientados a repositorio                |
+| Proyecto grande                | Colaboración multiagente                        |
+| Dominio especializado          | Agente orientado a dominio                      |
+| Proyecto para principiantes    | Fullstack Agent con convenciones guiadas        |
 
 ---
 
 ## Documentación Operativa Mínima
 
-Generar únicamente la documentación que aporte valor.
+Genera solo la documentación que aporta valor.
 
 La documentación operativa evoluciona junto con el proyecto en lugar de crearse completamente desde el inicio.
 
 ---
 
-## Convention over Configuration
+## Convención sobre Configuración
 
 Las reglas técnicas pertenecen a `CONVENTIONS.md`.
 
-La metodología permanece independiente de frameworks, lenguajes de programación y tecnologías específicas.
+La metodología se mantiene independiente de frameworks, lenguajes de programación y tecnologías específicas.
 
 ---
 
@@ -118,157 +144,192 @@ La metodología permanece independiente de frameworks, lenguajes de programació
 
 Los agentes se adaptan a:
 
-- el repositorio;
-- el proyecto;
-- el stack tecnológico;
-- el equipo de desarrollo.
+* el repositorio;
+* el proyecto;
+* el stack tecnológico;
+* el equipo de desarrollo;
+* el dominio;
+* el nivel de experiencia del desarrollador.
 
-Los proyectos nunca deberían adaptarse al agente.
+Los proyectos nunca deben verse obligados a adaptarse al agente.
 
 ---
 
 ## Integración Contract-First
 
-Cuando existen contratos API:
+Cuando existen contratos de API:
 
-- El Backend es propietario del contrato.
-- El Frontend consume dicho contrato.
+* Backend es dueño del contrato.
+* Frontend consume el contrato.
 
-Las reglas específicas de integración pertenecen a `CONVENTIONS.md`.
+Las reglas de integración específicas del proyecto pertenecen a `CONVENTIONS.md`.
 
 ---
 
 # Inicio Rápido
 
-Comenzar a utilizar CADD toma menos de cinco minutos.
+Empezar con CADD toma menos de cinco minutos.
 
-## 1. Selecciona el agente adecuado
+## 1. Elegir el agente apropiado
 
-Actualmente existen los siguientes agentes:
+Agentes disponibles actualmente:
 
-- Backend
-- Frontend
+* Backend Agent
+* Frontend Agent
+* Fullstack Agent
+* Control Systems Agent
+
+Usa el agente que mejor coincida con el repositorio o alcance del proyecto.
+
+Uso recomendado:
+
+| Agente                | Cuándo usarlo                                                                                                                  |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Backend Agent         | Repositorios solo backend, APIs, servicios, bases de datos y lógica de negocio                                                 |
+| Frontend Agent        | Repositorios solo frontend, interfaces, páginas, componentes e integración cliente                                             |
+| Fullstack Agent       | Proyectos pequeños o para principiantes donde frontend y backend se manejan juntos                                             |
+| Control Systems Agent | Proyectos relacionados con sistemas de control, automatización, modelado, simulación o análisis del comportamiento de sistemas |
 
 ---
 
-## 2. Copia AGENTS.md
+## 2. Copiar AGENTS.md
 
-Copia el `AGENTS.md` correspondiente en la raíz del repositorio.
+Copia el `AGENTS.md` correspondiente en la raíz de tu repositorio.
 
 Ejemplo:
 
 ```text
-mi-proyecto/
+my-project/
 
 AGENTS.md
 README.md
 src/
 ```
 
+Para un espacio de trabajo multiagente, cada agente puede vivir en su propia carpeta:
+
+```text
+CADD/
+
+backend-agent/
+frontend-agent/
+fullstack-agent/
+control-systems-agent/
+```
+
 ---
 
-## 3. Crea CONTEXT.md
+## 3. Crear CONTEXT.md
 
 Crea un archivo `CONTEXT.md`.
 
-Este documento representa la **Single Source of Truth** del proyecto.
+Este documento es la **Fuente Única de Verdad** del proyecto.
 
 Debe describir:
 
-- objetivo del proyecto;
-- alcance;
-- arquitectura;
-- stack tecnológico;
-- módulos;
-- integraciones;
-- restricciones;
-- roadmap;
-- estado actual;
-- idioma del proyecto (*Project Language*).
+* objetivo del proyecto;
+* alcance;
+* arquitectura;
+* stack tecnológico;
+* módulos;
+* integraciones;
+* restricciones;
+* roadmap;
+* estado actual;
+* idioma del proyecto.
 
 ---
 
-## 4. Inicia tu Agente de IA
+## 4. Iniciar tu Agente de IA
 
 El agente automáticamente:
 
-- leerá `CONTEXT.md`;
-- comprenderá el alcance del repositorio;
-- generará la documentación operativa cuando sea necesario;
-- mantendrá sincronizada la documentación con la implementación.
+* leerá `CONTEXT.md`;
+* entenderá el alcance del proyecto;
+* aplicará sus responsabilidades especializadas;
+* generará documentación operativa cuando sea necesario;
+* mantendrá la documentación sincronizada con la implementación.
 
 ---
 
 # Documentación Generada
 
-Dependiendo del proyecto, el agente podrá generar automáticamente:
+Dependiendo del proyecto, el agente puede generar automáticamente:
 
-| Archivo | Propósito |
-|----------|-----------|
-| `CONVENTIONS.md` | Convenciones técnicas del proyecto |
-| `TASKS.md` | Estado operativo del desarrollo |
-| `DECISIONS.md` | Decisiones técnicas |
-| `CHANGELOG.md` | Historial de cambios implementados |
+| Archivo          | Propósito                                      |
+| ---------------- | ---------------------------------------------- |
+| `CONVENTIONS.md` | Convenciones técnicas específicas del proyecto |
+| `TASKS.md`       | Trabajo operativo actual                       |
+| `DECISIONS.md`   | Decisiones técnicas                            |
+| `CHANGELOG.md`   | Cambios implementados                          |
 
 Estos documentos evolucionan junto con el proyecto.
 
 ---
 
-# Flujo de Trabajo
+# Flujo de Trabajo Típico
 
 ```text
-              Planificación del Proyecto
-                       │
-                       ▼
-                  CONTEXT.md
-                       │
-        ┌──────────────┼──────────────┐
-        ▼              ▼              ▼
- Backend Agent   Frontend Agent    AI Agent
-        │              │              │
-        └──────────────┼──────────────┘
-                       ▼
-                 Implementación
-                       │
-        ┌──────────────┼──────────────┐
-        ▼              ▼              ▼
-    TASKS.md     DECISIONS.md   CHANGELOG.md
+                  Planificación del Proyecto
+                            │
+                            ▼
+                       CONTEXT.md
+                            │
+          ┌─────────────────┼─────────────────┬──────────────────────┐
+          ▼                 ▼                 ▼                      ▼
+ Backend Agent      Frontend Agent      Fullstack Agent      Control Systems Agent
+          │                 │                 │                      │
+          └─────────────────┼─────────────────┴──────────────────────┘
+                            ▼
+                     Implementación
+                            │
+          ┌─────────────────┼─────────────────┐
+          ▼                 ▼                 ▼
+      TASKS.md        DECISIONS.md      CHANGELOG.md
 ```
 
 ---
 
-# Estructura Actual
+# Estructura Actual de Carpetas
 
 ```text
 CADD/
 
-├── Backend/
+├── backend-agent/
 │   └── AGENTS.md
 │
-└── Frontend/
+├── frontend-agent/
+│   └── AGENTS.md
+│
+├── fullstack-agent/
+│   └── AGENTS.md
+│
+└── control-systems-agent/
     └── AGENTS.md
 ```
 
-En futuras versiones podrán incorporarse:
+Versiones futuras pueden incluir:
 
-- Plantillas
-- AI Agent
-- Mobile Agent
-- DevOps Agent
-- Proyectos de ejemplo
+* Plantillas
+* AI Agent
+* Mobile Agent
+* DevOps Agent
+* Data Agent
+* Cybersecurity Agent
+* Proyectos de ejemplo
 
 ---
 
 # Filosofía
 
-CADD sigue una idea muy simple.
+CADD sigue una idea simple.
 
-> **El contexto guía al agente.  
-> El agente impulsa la implementación.**
+> **El contexto guía al agente.
+> El agente guía la implementación.**
 
 La documentación existe para apoyar el desarrollo, no para ralentizarlo.
 
-Un proyecto solo debería contener la documentación que realmente aporta valor.
+Los proyectos deben contener solo la documentación que aporta valor.
 
 ---
 
@@ -276,28 +337,34 @@ Un proyecto solo debería contener la documentación que realmente aporta valor.
 
 ## Disponible
 
-- ✅ Backend Agent
-- ✅ Frontend Agent
+* ✅ Backend Agent
+* ✅ Frontend Agent
+* ✅ Fullstack Agent
+* ✅ Control Systems Agent
 
 ## Planificado
 
-- ⬜ Plantilla de CONTEXT
-- ⬜ Plantilla de CONVENTIONS
-- ⬜ Plantilla de TASKS
-- ⬜ Plantilla de DECISIONS
-- ⬜ Plantilla de CHANGELOG
-- ⬜ AI Agent
-- ⬜ Mobile Agent
-- ⬜ DevOps Agent
-- ⬜ Proyectos de ejemplo
+* ⬜ Plantilla de CONTEXT
+* ⬜ Plantilla de CONVENTIONS
+* ⬜ Plantilla de TASKS
+* ⬜ Plantilla de DECISIONS
+* ⬜ Plantilla de CHANGELOG
+* ⬜ AI Agent
+* ⬜ Mobile Agent
+* ⬜ DevOps Agent
+* ⬜ Data Agent
+* ⬜ Cybersecurity Agent
+* ⬜ Proyectos de ejemplo
 
 ---
 
 # Estado
 
+Estado actual
+
 **Experimental**
 
-CADD continúa evolucionando a partir de experiencias reales de desarrollo de software.
+CADD evoluciona activamente a partir de experiencias reales de desarrollo de software.
 
 ---
 
@@ -313,12 +380,12 @@ Creado y mantenido por
 
 **Christian Sánchez**
 
-Software Engineer
+Software Developer
 
-Peru
+Perú
 
 ---
 
 # Licencia
 
-Pendiente de definir.
+Licencia por definir.

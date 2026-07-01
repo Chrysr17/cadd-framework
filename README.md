@@ -1,27 +1,28 @@
 # CADD
+
 🌐 **Languages**
 
-- 🇺🇸 English (Current)
-- 🇪🇸 [Español](README.es.md)
+* 🇺🇸 English (Current)
+* 🇪🇸 [Español](README.es.md)
 
 > **Context-Adaptive Development**
 >
-> *A lightweight AI-assisted software development methodology based on a single project context, specialized repository agents, scalable agent collaboration, and minimal operational documentation.*
+> *A lightweight AI-assisted software development methodology based on a single project context, specialized agents, scalable agent collaboration, and minimal operational documentation.*
 
 ---
 
 # What is CADD?
 
-CADD is a lightweight methodology for AI-assisted software development.
+CADD is a lightweight methodology for AI-assisted development.
 
-Instead of relying on multiple planning documents and large specifications, CADD uses a **single project context** as the source of truth and repository-specific agents to transform planning into implementation.
+Instead of relying on multiple planning documents and large specifications, CADD uses a **single project context** as the source of truth and specialized agents to transform planning into implementation.
 
 The goal is to reduce documentation overhead while preserving:
 
-- Consistency
-- Maintainability
-- Traceability
-- Scalability
+* Consistency
+* Maintainability
+* Traceability
+* Scalability
 
 ---
 
@@ -29,12 +30,12 @@ The goal is to reduce documentation overhead while preserving:
 
 Traditional AI-assisted development workflows often generate:
 
-- duplicated documentation;
-- multiple planning documents;
-- oversized specifications;
-- documentation that quickly becomes outdated.
+* duplicated documentation;
+* multiple planning documents;
+* oversized specifications;
+* documentation that quickly becomes outdated.
 
-CADD addresses these problems by keeping the project context in a single location and allowing repository-specific agents to generate and maintain only the documentation that provides value.
+CADD addresses these problems by keeping the project context in a single location and allowing specialized agents to generate and maintain only the documentation that provides value.
 
 ---
 
@@ -44,25 +45,47 @@ CADD is based on the following principles.
 
 ## Single Source of Truth
 
-`CONTEXT.md` is the project's only planning document.
+`CONTEXT.md` is the project's main planning document.
 
 All project decisions originate from it.
 
 ---
 
-## Repository-Oriented Agents
+## Specialized Agents
 
-Each repository has its own specialized agent.
+Each agent has a clear responsibility.
+
+Agents may be organized by:
+
+* repository;
+* technical layer;
+* system area;
+* development role;
+* domain specialization.
 
 Examples:
 
-- Backend
-- Frontend
-- AI
-- Mobile
-- DevOps
+* Backend Agent
+* Frontend Agent
+* Fullstack Agent
+* Control Systems Agent
+* AI Agent
+* Mobile Agent
+* DevOps Agent
 
-Each agent focuses only on the responsibilities of its repository.
+Each agent focuses only on its defined scope and avoids taking responsibilities outside of its role.
+
+---
+
+## Repository-Oriented and Domain-Oriented Agents
+
+CADD supports both repository-oriented agents and domain-oriented agents.
+
+Repository-oriented agents are useful when a project is divided into separate codebases, such as backend and frontend repositories.
+
+Domain-oriented agents are useful when the work requires specialized knowledge, such as control systems, AI, infrastructure, cybersecurity, data processing, or embedded systems.
+
+This allows CADD to support both traditional software projects and more specialized engineering workflows.
 
 ---
 
@@ -72,16 +95,18 @@ CADD supports both single-agent and multi-agent development.
 
 Projects may use:
 
-- a single repository agent;
-- multiple repository agents;
-- specialized agents collaborating on the same system.
+* a single repository agent;
+* a fullstack agent;
+* multiple repository-oriented agents;
+* specialized agents collaborating on the same system.
 
 The number of agents should be determined by:
 
-- project size;
-- system complexity;
-- team size;
-- developer experience.
+* project size;
+* system complexity;
+* team size;
+* developer experience;
+* domain complexity.
 
 CADD does not require multiple agents.
 
@@ -89,11 +114,13 @@ The same methodology scales naturally from a single developer to large engineeri
 
 ### Recommended Strategy
 
-| Project Size | Recommended Strategy |
-|--------------|----------------------|
-| Small | Single repository agent |
-| Medium | Repository-oriented agents |
-| Large | Multi-agent collaboration |
+| Project Size / Context    | Recommended Strategy                       |
+| ------------------------- | ------------------------------------------ |
+| Small project             | Single repository agent or Fullstack Agent |
+| Medium project            | Repository-oriented agents                 |
+| Large project             | Multi-agent collaboration                  |
+| Specialized domain        | Domain-oriented agent                      |
+| Beginner-friendly project | Fullstack Agent with guided conventions    |
 
 ---
 
@@ -117,10 +144,12 @@ The methodology itself remains independent of frameworks, programming languages 
 
 Agents adapt to:
 
-- the repository;
-- the project;
-- the technology stack;
-- the development team.
+* the repository;
+* the project;
+* the technology stack;
+* the development team;
+* the domain;
+* the developer experience level.
 
 Projects should never be forced to adapt to the agent.
 
@@ -130,8 +159,8 @@ Projects should never be forced to adapt to the agent.
 
 When API contracts exist:
 
-- Backend owns the contract.
-- Frontend consumes the contract.
+* Backend owns the contract.
+* Frontend consumes the contract.
 
 Project-specific integration rules belong to `CONVENTIONS.md`.
 
@@ -145,8 +174,21 @@ Getting started with CADD takes less than five minutes.
 
 Current available agents:
 
-- Backend
-- Frontend
+* Backend Agent
+* Frontend Agent
+* Fullstack Agent
+* Control Systems Agent
+
+Use the agent that best matches the repository or project scope.
+
+Recommended usage:
+
+| Agent                 | When to use                                                                                       |
+| --------------------- | ------------------------------------------------------------------------------------------------- |
+| Backend Agent         | Backend-only repositories, APIs, services, databases and business logic                           |
+| Frontend Agent        | Frontend-only repositories, UI, pages, components and client-side integration                     |
+| Fullstack Agent       | Small or beginner-friendly projects where frontend and backend are handled together               |
+| Control Systems Agent | Projects related to control systems, automation, modeling, simulation or system behavior analysis |
 
 ---
 
@@ -164,6 +206,17 @@ README.md
 src/
 ```
 
+For a multi-agent workspace, each agent can live in its own folder:
+
+```text
+CADD/
+
+backend-agent/
+frontend-agent/
+fullstack-agent/
+control-systems-agent/
+```
+
 ---
 
 ## 3. Create CONTEXT.md
@@ -174,16 +227,16 @@ This document is the project's **Single Source of Truth**.
 
 It should describe:
 
-- project objective;
-- scope;
-- architecture;
-- technology stack;
-- modules;
-- integrations;
-- constraints;
-- roadmap;
-- current status;
-- Project Language.
+* project objective;
+* scope;
+* architecture;
+* technology stack;
+* modules;
+* integrations;
+* constraints;
+* roadmap;
+* current status;
+* project language.
 
 ---
 
@@ -191,10 +244,11 @@ It should describe:
 
 The agent will automatically:
 
-- read `CONTEXT.md`;
-- understand the repository scope;
-- generate operational documentation when required;
-- keep documentation synchronized with the implementation.
+* read `CONTEXT.md`;
+* understand the project scope;
+* apply its specialized responsibilities;
+* generate operational documentation when required;
+* keep documentation synchronized with the implementation.
 
 ---
 
@@ -202,12 +256,12 @@ The agent will automatically:
 
 Depending on the project, the agent may automatically generate:
 
-| File | Purpose |
-|------|---------|
+| File             | Purpose                                |
+| ---------------- | -------------------------------------- |
 | `CONVENTIONS.md` | Project-specific technical conventions |
-| `TASKS.md` | Current operational work |
-| `DECISIONS.md` | Technical decisions |
-| `CHANGELOG.md` | Implemented changes |
+| `TASKS.md`       | Current operational work               |
+| `DECISIONS.md`   | Technical decisions                    |
+| `CHANGELOG.md`   | Implemented changes                    |
 
 These documents evolve together with the project.
 
@@ -221,11 +275,11 @@ These documents evolve together with the project.
                          ▼
                     CONTEXT.md
                          │
-          ┌──────────────┼──────────────┐
-          ▼              ▼              ▼
- Backend Agent   Frontend Agent    AI Agent
-          │              │              │
-          └──────────────┼──────────────┘
+          ┌──────────────┼──────────────┬────────────────────┐
+          ▼              ▼              ▼                    ▼
+ Backend Agent   Frontend Agent   Fullstack Agent   Control Systems Agent
+          │              │              │                    │
+          └──────────────┼──────────────┴────────────────────┘
                          ▼
                   Implementation
                          │
@@ -241,20 +295,28 @@ These documents evolve together with the project.
 ```text
 CADD/
 
-├── Backend/
+├── backend-agent/
 │   └── AGENTS.md
 │
-└── Frontend/
+├── frontend-agent/
+│   └── AGENTS.md
+│
+├── fullstack-agent/
+│   └── AGENTS.md
+│
+└── control-systems-agent/
     └── AGENTS.md
 ```
 
 Future versions may include:
 
-- Templates
-- AI Agent
-- Mobile Agent
-- DevOps Agent
-- Example Projects
+* Templates
+* AI Agent
+* Mobile Agent
+* DevOps Agent
+* Data Agent
+* Cybersecurity Agent
+* Example Projects
 
 ---
 
@@ -262,7 +324,7 @@ Future versions may include:
 
 CADD follows one simple idea.
 
-> **Context drives the agent.  
+> **Context drives the agent.
 > The agent drives the implementation.**
 
 Documentation exists to support development, not to slow it down.
@@ -275,20 +337,24 @@ Projects should contain only the documentation that provides value.
 
 ## Available
 
-- ✅ Backend Agent
-- ✅ Frontend Agent
+* ✅ Backend Agent
+* ✅ Frontend Agent
+* ✅ Fullstack Agent
+* ✅ Control Systems Agent
 
 ## Planned
 
-- ⬜ CONTEXT template
-- ⬜ CONVENTIONS template
-- ⬜ TASKS template
-- ⬜ DECISIONS template
-- ⬜ CHANGELOG template
-- ⬜ AI Agent
-- ⬜ Mobile Agent
-- ⬜ DevOps Agent
-- ⬜ Example Projects
+* ⬜ CONTEXT template
+* ⬜ CONVENTIONS template
+* ⬜ TASKS template
+* ⬜ DECISIONS template
+* ⬜ CHANGELOG template
+* ⬜ AI Agent
+* ⬜ Mobile Agent
+* ⬜ DevOps Agent
+* ⬜ Data Agent
+* ⬜ Cybersecurity Agent
+* ⬜ Example Projects
 
 ---
 
@@ -314,7 +380,7 @@ Created and maintained by
 
 **Christian Sánchez**
 
-Software Engineer
+Software Developer
 
 Peru
 

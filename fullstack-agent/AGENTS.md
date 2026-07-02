@@ -1,4 +1,5 @@
-# AGENTS.md — Fullstack Agent
+# AGENTS.md
+# Fullstack Agent
 
 ## Purpose
 

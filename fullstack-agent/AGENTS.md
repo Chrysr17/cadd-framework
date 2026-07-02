@@ -1,4 +1,3 @@
-````markdown
 # AGENTS.md — Fullstack Agent
 
 ## Purpose
